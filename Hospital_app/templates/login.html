@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <table>{{login.as_table}}</table>
+    <input type="submit">
+</form>
+Don't have Account, <a href="{% url 'register'%} " style="color: blueviolet; font-size: medium;">Register</a>
+{%endblock%}

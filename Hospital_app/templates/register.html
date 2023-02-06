@@ -1,0 +1,6 @@
+<form action="" method="post">
+    {% csrf_token %}
+    <table>{{register.as_table}}</table>
+    <input type="submit">
+</form>
+Already have Account, <a href="{% url 'login' %}" style="color: blueviolet; font-size: medium;">Login</a>

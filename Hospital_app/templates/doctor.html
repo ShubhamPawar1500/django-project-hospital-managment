@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body bgcolor="cyan">
+    <button><a href="{% url 'home' %}">Go to home</a></button><br><br><br>
+
+    <table class="table table-hover table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Degree</th>
+            <th>speciality</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{i.doctor_name}}</td>
+            <td>{{i.Degree}}</td>
+            <td>{{i.speciality}}</td>
+            <td><a href="edit/{{i.doctor_name}}">Edit</a></td>
+            <td><a href="del/{{i.doctor_name}}">delete</a></td>
+            {%endfor%}
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><a href="{% url 'add_doctor' %}">Add doctors</a></td>
+        </tr>
+    </table>
+
+</body>
+</html>
